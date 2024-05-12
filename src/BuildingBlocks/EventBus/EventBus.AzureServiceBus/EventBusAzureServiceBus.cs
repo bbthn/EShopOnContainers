@@ -40,7 +40,7 @@ namespace EventBus.AzureServiceBus
             var eventName = @event.GetType().Name; // OrderCreatedIntegrationEvent
             eventName = base.ProcessEventName(eventName);
 
-            var eventStr = JsonConvert.DeserializeObject<string>(eventName);
+            var eventStr = JsonConvert.SerializeObject(@event);
             var eventArr = Encoding.UTF8.GetBytes(eventStr);
 
             var message = new Message
@@ -137,7 +137,7 @@ namespace EventBus.AzureServiceBus
             bool ruleExist;
             try
             {
-                var rule = _managementClient.GetRuleAsync(EventBusConfig.DefaultTopicName, eventName, eventName).GetAwaiter().GetResult();
+                var rule = _managementClient.GetRuleAsync(EventBusConfig.DefaultTopicName, base.GetSubName(eventName), eventName).GetAwaiter().GetResult();
                 ruleExist = rule != null;
 
             }

@@ -109,14 +109,14 @@ namespace EventBus.RabbitMQ
                                             routingKey: eventName);
 
             }
-            SubscriptionManager.AddSubscription<T, TH>();
+            base.SubscriptionManager.AddSubscription<T, TH>();
             StartBasicConsume(eventName);
 
         }
 
         public override void UnSubscribe<T, TH>()
         {
-            SubscriptionManager.RemoveSubscription<T, TH>();
+            base.SubscriptionManager.RemoveSubscription<T, TH>();
         }
 
         private IModel CreateConsumerChannel()

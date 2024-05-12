@@ -8,6 +8,7 @@ namespace EventBus.xUnitTests.Events.EventHandlers
     {
         public Task Handle(OrderCreatedIntegrationEvent @event)
         {
+            Console.WriteLine("Handle method worked! {id}", @event.Id);
             return Task.CompletedTask;
         }
     }
