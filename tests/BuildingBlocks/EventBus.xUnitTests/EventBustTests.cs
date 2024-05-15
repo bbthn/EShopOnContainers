@@ -85,7 +85,7 @@ namespace EventBus.xUnitTests
                 DefaultTopicName = "BBTopicName", //exchangeName
                 EventBusType = EventBusType.AzureServiceBus,
                 EventNameSuffix = "IntegrationEvent",
-                EventBustConnectionString = "Endpoint=sb://bbapplication.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=CwWzlyTWtGZg64YgweXdVtTL8bGJD5B7f+ASbMuT3Ko="
+                EventBustConnectionString = "**"
             };
         }
         private EventBusConfig GetRabbitMQBus()
