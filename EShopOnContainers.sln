@@ -72,6 +72,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.xUnitTests", "tests\BuildingBlocks\EventBus.xUnitTests\EventBus.xUnitTests.csproj", "{D33FBABD-868D-4E73-844E-4AAF8E2BE0C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose-files", "docker-compose-files", "{CB8CA16D-9EF7-4B02-84E3-C46203DDCE8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consul", "consul", "{5D41EA37-7277-48AF-B88B-A5B2A9A89673}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +184,7 @@ Global
 		{B344E844-2651-4444-8A4E-4F4CC03260CD} = {572F2323-1F4B-4348-A4F8-3321532B7E65}
 		{5043254C-654F-474D-93F9-0D78F7744589} = {45DF76B9-716A-4DFF-A698-A6254B3CA066}
 		{D33FBABD-868D-4E73-844E-4AAF8E2BE0C1} = {5043254C-654F-474D-93F9-0D78F7744589}
+		{5D41EA37-7277-48AF-B88B-A5B2A9A89673} = {CB8CA16D-9EF7-4B02-84E3-C46203DDCE8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51184A1D-857A-4987-841C-C7DB7FA64B26}
