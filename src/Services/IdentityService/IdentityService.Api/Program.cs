@@ -1,3 +1,4 @@
+using IdentityService.Api.Application;
 using IdentityService.Api.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddScoped<IIdentityService,IdentityService.Api.Application.Services.IdentityService>();
+builder.Services.ConfigureConsul(builder.Configuration);
+
 
 var app = builder.Build();
 
@@ -19,6 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.RegisterWithConsul(app.Lifetime,app.Configuration);
 
 app.UseHttpsRedirection();
 

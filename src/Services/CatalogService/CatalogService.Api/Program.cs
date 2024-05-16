@@ -22,6 +22,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextService(builder.Configuration);
 
+//consul services addded
+builder.Services.ConfigureConsul(builder.Configuration);
+
 builder.Services.Configure<CatalogSettings>(builder.Configuration.GetSection("CatalogSettings"));
 
 var app = builder.Build();
@@ -42,6 +45,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//consul settings
+app.RegisterWithConsul(app.Lifetime, app.Configuration);
 
 app.UseHttpsRedirection();
 
