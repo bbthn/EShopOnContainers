@@ -8,6 +8,13 @@ namespace IdentityService.Api.Application.Services
 {
     public class IdentityService : IIdentityService
     {
+        private readonly IConfiguration _config;
+
+        public IdentityService(IConfiguration config)
+        {
+            _config = config;
+        }
+
         public Task<LoginResponseModel> Login(LoginRequestModel loginRequestModel)
         {
             //DB Process will be here....
@@ -18,7 +25,7 @@ namespace IdentityService.Api.Application.Services
                 new Claim(ClaimTypes.Name, "Batuhan Batumlu")
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("EShopSecretKeyShouldBeLongSoItIstooLong!"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["AuthConfig:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expiry = DateTime.Now.AddDays(10);
 

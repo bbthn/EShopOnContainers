@@ -1,4 +1,5 @@
 ﻿using IdentityService.Api.Application.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace IdentityService.Api.Application.Services
 {

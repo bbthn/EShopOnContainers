@@ -4,6 +4,7 @@ using EventBus.Base.Abstraction;
 using EventBus.Factory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NotificationService.Api.IntegrationEvents.EventHandler;
 using NotificationService.IntegrationEvents.Handlers;
 
 namespace NotificationService.ServiceRegistration
@@ -26,6 +27,7 @@ namespace NotificationService.ServiceRegistration
 
             service.AddTransient<OrderPaymentFailedIntegrationEventHandler>();
             service.AddTransient<OrderPaymentSuccessIntegrationEventHandler>();
+            service.AddTransient<OrderCreatedIntegrationEventHandler>();
 
             service.AddLogging(configure => { configure.AddConsole(); });
 

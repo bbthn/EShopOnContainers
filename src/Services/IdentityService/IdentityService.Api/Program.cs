@@ -10,7 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddScoped<IIdentityService,IdentityService.Api.Application.Services.IdentityService>();
 builder.Services.ConfigureConsul(builder.Configuration);
 

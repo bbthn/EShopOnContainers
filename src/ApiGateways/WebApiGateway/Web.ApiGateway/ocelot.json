@@ -30,6 +30,16 @@
 
       "UpstreamPathTemplate": "/auth",
       "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "UseServiceDiscoery": true,
+      "ServiceName": "BasketService",
+
+      "DownstreamPathTemplate": "/api/basket/{everything}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/basket/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
     }
   ]
 }
