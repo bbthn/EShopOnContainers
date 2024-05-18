@@ -1,5 +1,7 @@
 Merhaba, bu proje, güçlü bir mikroservis ekosisteminin nasıl kurulabileceğini göstermektedir. Projemizde altı farklı servis ve bir API Gateway bulunmaktadır.
+
 Genel bakış:
+
 Mikroservisler:
 NotificationService
 PaymentService
