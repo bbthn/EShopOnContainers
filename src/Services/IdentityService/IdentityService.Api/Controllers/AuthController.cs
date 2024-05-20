@@ -11,10 +11,12 @@ namespace IdentityService.Api.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IIdentityService _identityService;
+        private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IIdentityService identityService)
+        public AuthController(IIdentityService identityService, ILogger<AuthController> logger)
         {
             _identityService = identityService;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -22,8 +24,10 @@ namespace IdentityService.Api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequestModel loginRequestModel)
         {
             if (loginRequestModel == null)
+
                 return BadRequest();
             var response =  _identityService.Login(loginRequestModel);
+            _logger.LogInformation("Welcome {usrname}", response.Result.UserName);
             if(response == null)
                 return BadRequest();
             return Ok(response);

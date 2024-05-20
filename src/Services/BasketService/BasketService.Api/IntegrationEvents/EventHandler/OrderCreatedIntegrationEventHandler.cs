@@ -19,7 +19,7 @@ namespace BasketService.Api.IntegrationEvents.EventHandler
         public async Task Handle(OrderCreatedIntegrationEvent @event)
         {
             var res = await _redisbasketRepository.DeleteBasketAsync(@event.UserId.ToString());
-            _logger.LogInformation("Handling integration event: {IntegrationEventId} at BasketSevice.Api",@event.Id);
+            _logger.LogInformation($" [BasketSevice.Api] Handling integration event: {@event.Id} at BasketSevice.Api, OrderId : {@event.OrderNumber}");
         }
     }
 }

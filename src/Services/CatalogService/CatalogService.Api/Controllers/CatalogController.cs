@@ -130,7 +130,7 @@ namespace CatalogService.Api.Controllers
 
             var itemsOnPage = await query
                 .Skip(pageSize * pageIndex)
-                .Take(pageIndex)
+                .Take(pageSize)
                 .ToListAsync();
 
             itemsOnPage = ChangeUriPlaceHolder(itemsOnPage);
@@ -152,7 +152,7 @@ namespace CatalogService.Api.Controllers
 
             var itemsOnPage = await query
                 .Skip(pageSize * pageIndex)
-                .Take(pageIndex)
+                .Take(pageSize)
                 .ToListAsync();
 
             itemsOnPage = ChangeUriPlaceHolder(itemsOnPage);
