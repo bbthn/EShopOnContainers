@@ -34,3 +34,5 @@ Consul Integration: Servisler, başlatıldıklarında kendilerini Consul'a kayde
 
 Güvenlik:
 Authorization: OrderService ve BasketService için authentication protokollerinden yararlanılarak  yetkilendirme mekanizması kullanılmıştır.
+
+<img width="384" alt="Screenshot 2024-05-20 131033" src="https://github.com/bbthn/EShopOnContainers/assets/89300508/586f091e-761a-49f9-9886-c1a16244707c">
