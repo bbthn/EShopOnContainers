@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using OrderService.Domain.AggregateModels.BuyerAggregate;
-using System;
 
 namespace OrderService.Domain.Events
 {

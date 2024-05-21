@@ -1,4 +1,4 @@
-﻿namespace BasketService.Api.Core.Domain.Models
+﻿namespace OrderService.Domain.Models
 {
     public class CustomerBasket
     {
@@ -6,13 +6,14 @@
         public List<BasketItem> Items { get; set; } = new List<BasketItem>();
         public CustomerBasket()
         {
-                
-        }      
+
+        }
         public CustomerBasket(string customerId)
         {
             BuyerId = customerId;
-            
+
         }
     }
 }
+
 

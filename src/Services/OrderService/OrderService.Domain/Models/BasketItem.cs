@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BasketService.Api.Core.Domain.Models
+﻿
+namespace OrderService.Domain.Models
 {
     public class BasketItem 
     {
