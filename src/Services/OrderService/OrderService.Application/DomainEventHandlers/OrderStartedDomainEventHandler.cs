@@ -41,9 +41,9 @@ namespace OrderService.Application.DomainEventHandlers
                                            orderStartedEvent.CardExpiration,
                                            orderStartedEvent.Order.Id);
 
-            var buyerUpdated = buyerOriginallyExisted ?
-                buyerRepository.Update(buyer) :
-                await buyerRepository.AddAsync(buyer);
+            var buyerUpdated = buyerOriginallyExisted 
+                ? buyerRepository.Update(buyer) 
+                : await buyerRepository.AddAsync(buyer);
 
             await buyerRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
