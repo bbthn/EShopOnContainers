@@ -31,6 +31,7 @@ namespace BasketService.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            _logger.LogInformation("Basket Service is Up and Running");
             return Ok("Basket Service is Up and Running");
         }
 

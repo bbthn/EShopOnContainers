@@ -12,6 +12,7 @@ namespace OrderService.Infrastructure.EntityConfigurations
             builder.ToTable("orderstatus", OrderDbContext.DEFAULT_SCHEMA);
 
             builder.HasKey(o => o.Id);
+            builder.Property(i => i.Id);
 
             builder.Property(o => o.Id)
                 .HasDefaultValue(1)

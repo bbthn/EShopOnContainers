@@ -1,5 +1,6 @@
 using BasketService.Api.Extensions;
 using BasketService.Api.Infrastructure.Extensions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Host.ConfigureAppConfiguration(i => i.AddConfiguration(ConfigurationSetting.configuration));
 builder.Services.AppServiceRegister(builder.Configuration);
 
 
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -22,6 +25,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
+
 
 app.RegisterWithConsul(app.Lifetime,app.Configuration);
 
