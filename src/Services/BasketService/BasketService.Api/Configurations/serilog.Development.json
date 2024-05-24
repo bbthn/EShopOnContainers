@@ -1,7 +1,7 @@
 {
   "Serilog": {
     "Using": [ "Serilog.Sinks.Graylog", "Serilog.Sinks.Console" ],
-    "MinimumLevel": "Debug",
+    "MinimumLevel": "Information",
     "WriteTo": [
       {
         "Name": "Graylog",
