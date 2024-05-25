@@ -27,6 +27,12 @@ builder.Services.ConfigureConsul(builder.Configuration);
 
 builder.Services.Configure<CatalogSettings>(builder.Configuration.GetSection("CatalogSettings"));
 
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
+
 var app = builder.Build();
 
 app.MigrateDbContext<CatalogContext>((context, services) =>

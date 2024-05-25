@@ -13,6 +13,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IIdentityService,IdentityService.Api.Application.Services.IdentityService>();
 builder.Services.ConfigureConsul(builder.Configuration);
 
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
 
 var app = builder.Build();
 

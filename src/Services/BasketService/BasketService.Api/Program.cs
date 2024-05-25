@@ -14,7 +14,11 @@ builder.Services.AddSwaggerGen();
 builder.Host.ConfigureAppConfiguration(i => i.AddConfiguration(ConfigurationSetting.configuration));
 builder.Services.AppServiceRegister(builder.Configuration);
 
-
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
 
 var app = builder.Build();
 

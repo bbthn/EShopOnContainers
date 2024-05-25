@@ -10,7 +10,10 @@ using NotificationService.ServiceRegistration;
 
 ServiceCollection services = new ServiceCollection();
 services.AddAppServices();
-ServiceProvider sp =  services.BuildServiceProvider();
+
+
+ServiceProvider sp = services.BuildServiceProvider();
+
 
 
 IEventBus eventBus = sp.GetService<IEventBus>();
@@ -19,5 +22,5 @@ eventBus.Subscribe<OrderPaymentFailedIntegrationEvent, OrderPaymentFailedIntegra
 eventBus.Subscribe<OrderPaymentSuccessIntegrationEvent, OrderPaymentSuccessIntegrationEventHandler>();
 
 Console.WriteLine("Application is running...!");
-Console.ReadLine();
+Console.ReadKey();
 

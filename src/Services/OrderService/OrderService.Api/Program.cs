@@ -15,6 +15,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureRegistration(builder.Configuration);
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
+
 var app = builder.Build();
 
 

@@ -17,6 +17,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+//Containerlar aya?a kalkarken f?rlat?lan hatalar? önlemek için.
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
+
 
 var app = builder.Build();
 

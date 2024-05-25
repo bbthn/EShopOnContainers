@@ -2,14 +2,6 @@ version: '3.4'
 
 services:
 
-  webapp:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "2000:2000"
-    networks:
-      - net_frontend
-      - net_apigateway
     
   web.apigateway:
     environment:
@@ -159,7 +151,7 @@ services:
       - 1433:1433
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=Salih123!
+      - MSSQL_SA_PASSWORD=Batu123!
     volumes:
       - sqlserver_data:/var/opt/mssql/data
       - sqlserver_log:/var/opt/mssql/log

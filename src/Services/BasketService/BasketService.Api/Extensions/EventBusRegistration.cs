@@ -2,6 +2,7 @@
 using EventBus.Base;
 using EventBus.Base.Abstraction;
 using EventBus.Factory;
+using RabbitMQ.Client;
 
 namespace BasketService.Api.Extensions
 {
@@ -15,7 +16,11 @@ namespace BasketService.Api.Extensions
                 {
                     ConnectionRetryCount = 5,
                     EventBusType = EventBusType.RabbitMQ,
-                    SubscriberClientAppName = "BasketService"
+                    SubscriberClientAppName = "BasketService",
+                    Connection = new ConnectionFactory()
+                    {
+                        HostName = "s_rabbitmq"
+                    }
                 };
 
                 return EventBusFactory.Create(conf, sp);

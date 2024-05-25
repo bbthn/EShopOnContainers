@@ -11,7 +11,11 @@
         "basketservice.api": "StartDebugging",
         "web.apigateway": "StartDebugging",
         "paymentservice.api": "StartDebugging",
-        "webapp": "StartDebugging"
+        "webapp": "StartDebugging",
+        "s_consul": "StartWithoutDebugging",
+        "s_rabbitmq": "StartWithoutDebugging",
+        "s_redis": "StartWithoutDebugging",
+        "s_sqlserver": "StartWithoutDebugging"
       }
     }
   }

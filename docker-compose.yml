@@ -55,14 +55,6 @@ services:
       context: .
       dockerfile: src/Services/PaymentService/PaymentService.Api/Dockerfile
 
-
-  webapp:
-    container_name: c_blazorui
-    image: ${DOCKER_REGISTRY-}webapp
-    build:
-      context: .
-      dockerfile: src/Clients/BlazorWebApp/WebApp/Dockerfile
-
   s_redis:
     container_name: c_redis
     image: redis
@@ -77,4 +69,4 @@ services:
 
   s_consul:
     container_name: c_consul
-    image: consul
+    image: consul:1.15.4

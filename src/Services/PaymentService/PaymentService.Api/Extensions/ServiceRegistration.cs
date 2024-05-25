@@ -2,6 +2,7 @@
 using EventBus.Base.Abstraction;
 using EventBus.Factory;
 using PaymentService.Api.IntegrationEvents.Handlers;
+using RabbitMQ.Client;
 
 namespace PaymentService.Api.Extensions
 {
@@ -20,7 +21,11 @@ namespace PaymentService.Api.Extensions
                     ConnectionRetryCount = 5,
                     EventNameSuffix = "IntegrationEvent",
                     SubscriberClientAppName = "PaymentService",
-                    EventBusType=EventBusType.RabbitMQ
+                    EventBusType=EventBusType.RabbitMQ,
+                    Connection = new ConnectionFactory()
+                    {
+                        HostName = "s_rabbitmq"
+                    }
                 };
                 return EventBusFactory.Create(config, sp);
             });

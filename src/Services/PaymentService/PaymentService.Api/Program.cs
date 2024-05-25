@@ -11,6 +11,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddServices();
 
+builder.Host.UseDefaultServiceProvider(configure =>
+{
+    configure.ValidateOnBuild = false;
+    configure.ValidateScopes = false;
+});
+
 var app = builder.Build();
 
 
